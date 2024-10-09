@@ -14,6 +14,7 @@ MILESTONE 2: Solo una volta che il milestone 1 sarà completo e funzionante allo
 
 const formEl = document.querySelector(".form-inline");
 //console.log(formEl);
+const ticketInfo = document.querySelector(".card-body");
 
 formEl.addEventListener("submit", function (e){
     e.preventDefault();
@@ -21,6 +22,7 @@ formEl.addEventListener("submit", function (e){
     console.log(e.target.km.value);
     console.log(e.target.age.value);
 
+    let passengerName = document.getElementById("fullName").value;
     let km = document.getElementById("km").value;
     let age = document.getElementById("age").value;
     let price = km * 0.21;
@@ -35,6 +37,18 @@ formEl.addEventListener("submit", function (e){
         finalPrice = price - discount;
     }
     console.log(finalPrice.toFixed(2));
+
+    let passengerEl = `
+    <div>
+        <p>${"Nome del passeggero:"} ${passengerName}</p>
+        <p>${"Km da percorrere:"} ${km}</p>
+        <p>${"Età del passeggero:"} ${age} ${"anni"}</p>
+        <p>${"Prezzo del biglietto:"} ${finalPrice.toFixed(2)} ${"Euro"}</p>
+        <hr>
+    </div>
+    `
+
+    ticketInfo.insertAdjacentHTML("beforeend", passengerEl);
 });
 
 
