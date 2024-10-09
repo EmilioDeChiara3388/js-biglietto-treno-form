@@ -24,20 +24,27 @@
             <!-- place navbar here -->
         </header>
         <main>
-            <form class="form-inline" action="/action_page.php">
-                <div class="form-group">
-                  <label for="email">Email address:</label>
-                  <input type="email" class="form-control" id="email">
+            <h2 class="text-center my-1">Calcola il prezzo del tuo biglietto</h2>
+            <form class="form-inline p-3" action="/action_page.php">
+                <div class="form-group py-2" >
+                  <label for="first-last-name">Nome e Cognome:</label>
+                  <input type="text" class="form-control" id="full-name" placeholder="Nome Completo">
                 </div>
-                <div class="form-group">
-                  <label for="pwd">Password:</label>
-                  <input type="password" class="form-control" id="pwd">
+                <div class="form-group py-2">
+                  <label for="journey-km">Km da percorrere:</label>
+                  <input type="number" class="form-control" id="km" placeholder="Numero di km">
                 </div>
-                <div class="checkbox">
-                  <label><input type="checkbox"> Remember me</label>
-                </div>
-                <button type="submit" class="btn btn-default">Submit</button>
+                <div class="form-group py-2">
+                    <label for="passenger-age">Età:</label>
+                    <input type="number" class="form-control" id="age" placeholder="La tua età">
+                  </div>
+                <button type="submit" class="btn btn-default py-3">Submit</button>
               </form>
+
+              <h2 class="text-center my-1">Il tuo biglietto</h2>
+              <div class="p-3">
+                <h3 class="my-1">Passeggero</h3>
+              </div>
         </main>
         <footer>
             <!-- place footer here -->
