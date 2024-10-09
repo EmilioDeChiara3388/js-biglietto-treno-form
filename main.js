@@ -12,3 +12,33 @@ MILESTONE 1: Iniziamo implementando il programma senza alcuna estetica: usando e
 MILESTONE 2: Solo una volta che il milestone 1 sarà completo e funzionante allora realizzeremo un form in pagina in cui l’utente potrà inserire i dati e visualizzare il calcolo finale con il prezzo. Il recap dei dati e l'output del prezzo finale, andranno quindi stampati in pagina (il prezzo dovrà essere formattato con massimo due decimali, per indicare i centesimi sul prezzo). Questo richiederà un minimo di ricerca.
 */
 
+const formEl = document.querySelector(".form-inline");
+//console.log(formEl);
+
+formEl.addEventListener("submit", function (e){
+    e.preventDefault();
+    console.log(e.target.fullName.value);
+    console.log(e.target.km.value);
+    console.log(e.target.age.value);
+
+    let km = document.getElementById("km").value;
+    let age = document.getElementById("age").value;
+    let price = km * 0.21;
+    let discount = 0;
+    let finalPrice = price - discount;
+
+    if (age < 18){
+        discount = price - (price / 100 * 80);
+        finalPrice = price - discount;
+    } else if (age >= 65){
+        discount = price - (price / 100 * 60);
+        finalPrice = price - discount;
+    }
+    console.log(finalPrice);
+});
+
+
+
+
+
+
