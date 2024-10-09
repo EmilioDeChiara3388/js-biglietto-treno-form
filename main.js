@@ -34,7 +34,7 @@ formEl.addEventListener("submit", function (e){
         discount = price - (price / 100 * 60);
         finalPrice = price - discount;
     }
-    console.log(finalPrice);
+    console.log(finalPrice.toFixed(2));
 });
 
 
